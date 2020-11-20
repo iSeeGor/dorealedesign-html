@@ -1,0 +1,253 @@
+/*============================================================================
+	#Helper Classes
+==============================================================================*/
+.container__no-padding {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+
+    > .col,
+    > [class*="col-"] {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+.fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.link {
+    color: red;
+    text-decoration: none;
+
+    &:active,
+    &:visited {
+        color: red;
+    }
+}
+
+.font-caravan {
+    font-family: "Caravan", serif;
+}
+
+.block-title {
+    font-size: 3.6rem;
+    line-height: 1.22;
+    font-weight: $semiBold;
+    margin: 0;
+
+    @media (max-width: 1199.98px) {
+        padding-left: 20px;
+    }
+
+    @media (max-width: 475px) {
+        font-size: 3.2rem;
+        line-height: 1.2;
+    }
+
+
+    &._w-dot {
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            top: 18px;
+            left: -26px;
+            background: $fontColorPrimary;
+
+            @media (max-width: 1199.98px) {
+                left: 0px;
+            }
+        }
+    }
+}
+
+.breadcrumbs {
+    &__list {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    &__item {
+        color: white;
+
+        &:not(:last-child)::after {
+            content: "/";
+            margin: 0 4px;
+        }
+    }
+
+    &__link {
+        color: white;
+        font-size: 1.4rem;
+
+        &:active,
+        &:visited {
+            color: white;
+        }
+
+        &:hover {
+            text-decoration: none;
+            opacity: 0.8;
+        }
+    }
+}
+
+.to-top {
+    position: fixed;
+    transform: rotate(-90deg) translateX(-100px);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+    bottom: 40px;
+    right: 00px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+
+    .button-more {
+        display: block;
+    }
+
+    &__name {
+        padding-right: 20px;
+    }
+
+    .button-more__circle {
+        top: -14px;
+    }
+
+    &:hover {
+        .button-more svg circle {
+            stroke-dashoffset: 200;
+        }
+
+        .button-more__circle::before {
+            left: 0;
+        }
+    }
+    &._visible {
+        opacity: 1;
+        visibility: visible;
+        transform: rotate(-90deg) translateX(0px);
+    }
+}
+
+.mw-1920 {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.service-block__content {
+    will-change: min-height;
+}
+.inner-wrapper-sticky {
+    transform: translate(0, 0); /* For browsers don't support translate3d. */
+    transform: translate3d(0, 0, 0);
+    will-change: position, transform;
+}
+
+@media (max-width: 414.98px) {
+    .heading-title {
+        font-size: 2.6rem;
+        line-height: 4.2rem;
+    }
+}
+
+// resset styles of sal js on small screens
+@media (max-width: 1200px){
+    [data-sal|='fade'] {
+    opacity: 1;
+    }
+
+    [data-sal|='slide'],
+    [data-sal|='zoom'] {
+    opacity: 1;
+    transform: none;
+    }
+
+    [data-sal|='flip'] {
+    transform: none;
+    }
+}
+
+@media (max-width: 767.98px) {
+    
+    .preloader {
+
+        img {
+            width: 200px !important;
+        }
+    }
+}
+
+/* iframe video block
+ ------------------------------------------------------------*/
+.b-iframe {
+    &__container {
+        overflow: hidden;
+        // Calculated from the aspect ration of the content (in case of 16:9 it is 9/16= 0.5625)
+        padding-top: 56.25%;
+        position: relative;
+    }
+
+    iframe {
+        border: 0;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+}
+
+/* ArtSites
+ ------------------------------------------------------------*/
+.ArtSites {
+    display: flex;
+    align-items: center;
+
+    &__text {
+        width: 130px;
+        margin-right: 40px;
+    }
+}
+
+.AttachFile {
+    label span {
+        margin-right: 30px;
+    }
+}
+.AttachFile__del {
+    color: red;
+    display: inline-block;
+    position: relative;
+    line-height: 1.5;
+    cursor: pointer;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 4px;
+        left: 0;
+        height: 1px;
+        width: 100%;
+        background: red;
+    }
+
+    &:hover::after {
+        display: none;
+    }
+}

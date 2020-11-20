@@ -1,0 +1,13 @@
+@import 'layouts/root'; 			// Root
+@import 'layouts/header'; 			// Header
+@import 'layouts/footer'; 			// Footer
+
+
+// pages
+@import 'pages/import';				// Import All Pages
+
+
+@import 'templates/modals'; 		// Modals
+@import 'templates/product-grid'; 	// Product Grid
+@import 'templates/header-page'; 	// Header Page
+@import 'templates/preloader'; 	// Preloader

@@ -1,0 +1,61 @@
+.modal {
+	display: none;
+	background-color: #ebe7e7;
+	padding: 60px 90px;
+	
+	&__inner {
+		max-width: 350px;
+	}
+	
+	&__header {
+		margin-bottom: 30px;
+	}
+
+	&__title {
+		font-size: 2.8rem;
+		line-height: 3.6rem;
+		font-weight: $semiBold;
+		position: relative;
+		margin-bottom: 20px;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 14px;
+			left: -18px;
+			width: 7px;
+			height: 7px;
+			border-radius: 50%;
+			background-color: $fontColorPrimary;
+		}
+	}
+
+	&__form {
+		button {
+			margin-top: 20px;
+		}
+	}
+
+	&__button-close {
+		position: absolute;
+		top: 14px;
+		right: 14px;
+	}
+
+	.button-svg {
+		width: 100%;
+	}
+}
+
+@media (max-width: 475.98px) {
+
+	.modal {
+		padding: 60px 40px;
+
+		&__title {
+			font-size: 2.4rem;
+			line-height: 3rem;
+		}
+	}
+
+}

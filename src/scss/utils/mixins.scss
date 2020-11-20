@@ -1,0 +1,46 @@
+
+// Mixins
+// ====================================================================
+@mixin MonseratLight {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+@mixin Monserat {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+}
+
+@mixin MonseratMedium {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+@mixin MonseratSemiBold {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+@mixin MonseratBold {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+@mixin ssp-r {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: normal;
+}
+
+@mixin ssp-sb {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+}
+
+@mixin ssp-b {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 700;
+}
+
+@mixin transition($prop: all, $sec: 0.3s){
+    transition: $prop $sec ease;
+} 

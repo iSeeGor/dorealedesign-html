@@ -1,0 +1,25 @@
+/*============================================================================
+	#Root
+==============================================================================*/
+.root {
+	overflow: hidden;
+
+	&__header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 100;
+
+		&._preload {
+			padding-right: 17px;
+		}
+	}
+
+	&__main {
+		// margin-top: 95px;
+		background: white;
+		position: relative;
+    	z-index: 1;
+	}
+}

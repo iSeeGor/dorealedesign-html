@@ -1,0 +1,262 @@
+/*============================================================================
+	#Product Grid + Product Cards
+==============================================================================*/
+.product-grid {
+
+	
+	
+	&__container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin: 0 -8px;
+
+		@media (max-width: 991.98px){
+			margin: 0 auto;
+			padding: 0 8px;
+			max-width: 760px;
+		}
+	}
+
+	&__col {
+		flex: 0 0 33.333%;
+		max-width: 33.333%;
+		padding: 8px 8px;
+
+		@media (max-width: 1199.98px){
+			flex: 0 0 50%;
+			max-width: 50%;
+		}
+
+		@media (max-width: 991.98px){
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+	}
+}
+
+.dd-card {
+	position: relative;
+	padding-top: 65.7%;
+	overflow: hidden;
+
+	&__category {
+		color: white;
+		display: inline-block;
+		text-transform: uppercase;
+		font-size: 12px;
+		letter-spacing: 0.06em;
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		padding: 3px 22px;
+		background: #0000003d;
+		z-index: 1;
+
+		transform: translateY(20px);
+		opacity: 0;
+		transition-delay: 200ms;
+		transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1),
+					opacity 0.4s ease-in-out;
+	}
+
+	&__media {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transform: scale3d(1, 1, 1);
+			transition: transform 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+		}
+	}
+
+	&__body {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			background: #131313;
+			opacity: 0;
+			transition: opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+		}
+	}
+
+	&__body-inner {
+		position: relative;
+		color: $fontColorSecondary;
+		max-width: 300px;
+	}
+
+	&__title {
+		font-size: 2.8rem;
+		font-weight: $medium;
+		letter-spacing: 0.02em;
+		margin-bottom: 6px;
+		transform: translateY(20px);
+		opacity: 0;
+		transition-delay: 100ms;
+		transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1),
+					opacity 0.4s ease-in-out;
+
+		@media (max-width: 1199.98px) {
+			text-transform: uppercase;
+		}
+	}
+
+	&__meta-list {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		margin-bottom: 40px;
+
+		transform: translateY(20px);
+		opacity: 0;
+		transition-delay: 200ms;
+		transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1),
+					opacity 0.4s ease-in-out;
+	}
+
+	.button-more {
+		color: white;
+
+		top: 30px;
+		opacity: 0;
+		transition-delay: 250ms;
+		transition: top 0.6s cubic-bezier(0.215, 0.610, 0.355, 1),
+					opacity 0.4s ease-in-out;
+	}
+
+	.button-more__circle {
+		top: 5px;
+	}
+
+	&:hover {
+
+		.dd-card__media img {
+			transform: scale3d(1.1, 1.1, 1);
+		}
+
+		.dd-card__body::before {
+			opacity: 0.75;
+		}
+
+		.dd-card__title {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		.dd-card__meta-list,
+		.dd-card__category {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		.button {
+			opacity: 1;
+			top: 0;;
+		}
+
+	}
+
+}
+
+// Mobile Card View
+.dd-card._mobile {
+	
+	padding-top: calc(65.7% + 160px);
+
+	@media (max-width: 991.98px){
+		padding-top: 65.7%;
+	}
+
+	@media (max-width: 768.98px){
+		padding-top: calc(65.7% + 100px);
+	}
+
+	.dd-card__body {
+		height: 160px;
+		top: auto;
+		bottom: 0;
+
+		@media (max-width: 768.98px){
+			height: 140px;
+		}
+
+		@media (max-width: 575.98px){
+			height: auto;
+		}
+	}
+
+	.dd-card__body-inner {
+		padding-bottom: 20px;
+		// padding: 0 20px 20px 20px;
+	}
+	
+	.dd-card__body::before {
+		opacity: 0.75;
+	}
+
+	.dd-card__title {
+		transform: translateY(0);
+		opacity: 1;
+	}
+
+	.dd-card__meta-list {
+		display: none;
+		visibility: hidden;
+		opacity: 0;
+	}
+
+	.button-more {
+		top: 0;
+		opacity: 1;
+	}
+
+}
+
+@media (max-width: 575.98px) {
+
+	.dd-card {
+		&__title {
+			font-size: 2.4rem;
+			margin-bottom: 0;
+		}
+
+		&__body-inner {
+			margin: 10px 0 10px;
+		}
+	}
+
+}
+
+@media (max-width: 475.98px) {
+	.dd-card._mobile {
+		padding-top: calc(90% + 100px);
+	}
+}
+
+@media (max-width: 414.98px) {
+	.portfolio {
+		.button-svg {
+			width: calc(100% - 30px);
+		}
+	}
+}

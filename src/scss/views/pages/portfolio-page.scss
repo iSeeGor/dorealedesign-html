@@ -1,0 +1,145 @@
+/*============================================================================
+	#Portfolio Page
+==============================================================================*/
+// .header-page__bg-image {
+// 	background: url('../images/theme/headers/portfolio-bg.jpg') no-repeat center / cover;
+// }
+.p-portfolio {
+	overflow: hidden;
+
+	&__b-feedback {
+		margin-bottom: 115px;
+	}
+	
+	.product-grid__col {
+		display: none;
+	}
+}
+
+.filter-control {
+	padding: 68px 0;
+
+	&__inner {
+		padding: 0 20px;
+		display: flex;
+
+	}
+
+	&__button {
+		position: relative;
+		flex: 1 1 25%;
+		font-size: 1.65rem;
+		line-height: 1;
+		font-weight: $bold;
+		text-transform: uppercase;
+		padding: 17px 0;
+		letter-spacing: 0.1em;
+		margin: 0 40px;
+		transition: background 0.3s ease-in-out;
+
+		&._active {
+			background: $fontColorPrimary;
+			color: white;
+		}
+
+		&:not(:last-child)::after {
+			content: '';
+			position: absolute;
+			width: 6px;
+			height: 6px;
+			border-radius: 50%;
+			background: $fontColorPrimary;
+			right: -43px;
+			top: calc(50% - 3px );
+
+		}
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		&:not(._active):hover {
+			background: #ebe7e7;
+		}
+	}
+}
+
+.filter-content {
+	padding-bottom: 95px;
+	position: relative;
+    overflow: hidden;
+
+	.product-grid__container {
+		justify-content: flex-start;
+	}
+
+	.button-svg {
+		margin: 60px auto;
+		display: block;
+	}
+}
+
+@media (max-width: 1199.98px) {
+	.filter-control {
+
+		&__inner {
+			padding: 0;
+		}
+	}
+}
+
+@media (max-width: 991.98px) {
+
+	.filter-control {
+
+		&__button {
+			margin: 0 5px;
+
+			&::after {
+				display: none;
+			}
+		}
+	}
+
+}
+
+@media (max-width: 1024px) {
+
+	.header-page__slogan .font-caravan {
+		font-size: 14.4vw;
+	}
+}
+
+@media (max-width: 767.98px) {
+	.header-page__slogan {
+		display: none;
+	}
+
+	.filter-control {
+
+		&__inner {
+			flex-wrap: wrap;
+		}
+
+		&__button {
+			margin: 0 0px;
+			flex: 1 1 50%;
+		}
+	}
+}
+
+@media (max-width: 575.98px) {
+	.filter-content .button-more__circle {
+		display: none;
+	}
+}
+
+@media (max-width: 475.98px) {
+	.filter-content .button-svg {
+		width: calc(100% - 30px);
+	}
+}

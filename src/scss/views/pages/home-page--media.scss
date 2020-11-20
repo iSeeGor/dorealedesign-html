@@ -1,0 +1,110 @@
+@media (max-width: 1199.98px) { 
+	
+	.dd-numbers {
+		padding: 100px 0 40px;
+
+		&__number {
+			font-size: 6.2rem;
+			margin-bottom: 30px;
+		}
+
+		&__desc {
+			letter-spacing: .04rem;
+		}
+	}
+}
+
+@media (max-width: 1140px) {
+
+	.hero {
+
+		&__title {
+			font-size: 6.2rem;
+			line-height: 1.1;
+		}
+	}
+
+	.slogan-bar {
+
+		&__inner {
+			height: 100px;
+		}
+	}
+
+	.site-slogan {
+		&__title {
+			font-size: 2.2rem;
+		}
+	}
+
+}
+
+@media (max-width: 991.98px) {
+	.dd-numbers {
+
+		&__content {
+			justify-content: space-around;
+		}
+
+		&__item {
+			flex: 0 0 35%;
+
+		}
+	}
+}
+
+@media (max-width: 767.98px) {
+	.site-slogan {
+
+		&__progress-bar {
+			margin-right: 40px;
+		}
+	}
+}
+
+@media (max-width: 575.98px) {
+	.dd-numbers {
+		&__item {
+			flex: 0 0 100%;
+			text-align: center;
+		}
+
+		&__number {
+			margin-bottom: 20px;
+		}
+	}
+}
+
+@media (max-width: 360px) {
+	.hero {
+
+		&__title {
+			font-size: 5.4rem;
+		}
+	}
+	
+	.site-slogan {
+
+		&__title {
+			font-size: 2rem;
+		}
+
+		&__progress-bar {
+			margin-right: 20px;
+		}
+	}
+}
+
+// Height
+
+@media (max-height: 768px) {
+	.hero {
+
+		&__content {
+			transform: translateY(25%);
+		}
+	}
+
+	
+}
+
